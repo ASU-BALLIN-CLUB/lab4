@@ -9,7 +9,7 @@
 #define __Lab4__Token__
 
 #include <iostream>
-#include "common.h"
+#include "common.h" 
 
 using namespace std;
 
