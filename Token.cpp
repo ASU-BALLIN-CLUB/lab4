@@ -62,7 +62,7 @@ void Token::setTokenString(string s)
 {
     this->tokenString = s;
 }
-string Token::getTokenString()
+string Token::getTokenString() 
 {
     return this->tokenString;
 }
