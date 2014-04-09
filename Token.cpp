@@ -10,29 +10,19 @@
 Token::Token()
 {
     //What code do I need here to initialize everything.
-    LineList *head = null;
-    add_node(LineList *item){
-        LineList * temp = head;
-        while (temp->next != null) {
-            temp = temp->next;
-        }
-        temp->next = item;
-            
+    head = NULL;
+    left = NULL;
+    right = NULL;
 }
-
 Token::~Token()
 {
     //What code do I need here to free memory
-	recuresiveDeleteTree(root);
-}
-
-void recuresiveDeleteTree(Token *root){
-	if(node->left!= null)
-		recuresiveDeleteTree(node->left);
-	if(node->right!= null)
-		recuresiveDeleteTree(node->right);
-    
-	delete;
+    LineList *temp = head;
+    while(head != NULL){
+        temp = head->next;
+        delete head;
+        head = temp;
+    }
 }
 void Token::setCode(TokenCode newCode)
 {
@@ -82,4 +72,13 @@ void Token::setTokenString(string s)
 string Token::getTokenString()
 {
     return this->tokenString;
+}
+//What methods am I missing to implement a binary tree.
+void add_node(LineList *item){
+    LineList * temp = item;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = item;
+    
 }
