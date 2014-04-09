@@ -10,12 +10,29 @@
 Token::Token()
 {
     //What code do I need here to initialize everything.
-
+    LineList *head = null;
+    add_node(LineList *item){
+        LineList * temp = head;
+        while (temp->next != null) {
+            temp = temp->next;
+        }
+        temp->next = item;
+            
 }
+
 Token::~Token()
 {
     //What code do I need here to free memory
-    //delete
+	recuresiveDeleteTree(root);
+}
+
+void recuresiveDeleteTree(Token *root){
+	if(node->left!= null)
+		recuresiveDeleteTree(node->left);
+	if(node->right!= null)
+		recuresiveDeleteTree(node->right);
+    
+	delete;
 }
 void Token::setCode(TokenCode newCode)
 {
