@@ -59,3 +59,4 @@ public:
     void setNextToken(Token *newToken);
     Token* getNextToken();
 };
+#endif
