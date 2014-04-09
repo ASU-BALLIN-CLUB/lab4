@@ -468,7 +468,7 @@ bool Scanner::isReservedWord(char *str, Token *tok)
     {
         RwStruct rw = rw_table[str_len - 2][0];
         int i;
-        for (i = 0; i < 10 && rw_table[str_len - 2][i].token_code != 0; i++)
+        for (i = 0; i < 10 && rw_table[str_len - 2][i].token_code != NO_TOKEN; i++)
         {
             rw = rw_table[str_len - 2][i];
             if (strcmp(str, rw.string) == 0)
