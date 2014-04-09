@@ -10,6 +10,8 @@
 
 #include <iostream>
 #include "common.h"
+#include <string.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -17,6 +19,10 @@ using namespace std;
  this is a valid Pascal token.  A token must have a literal type,
  a literal value, and a token code.
  ***************/
+class LineList{
+        int num;
+        LineList * next;
+};
 class Token
 {
 private:
@@ -31,10 +37,10 @@ private:
     literal;
     string tokenString;
     //What variables and methods am I missing to implement a binary tree.
-    LineList * head;
-	Token *left;
-	Token *right;
-    
+    LineList *head;
+        Token *left;
+        Token *right;
+
 public:
     Token();
     ~Token();
@@ -53,8 +59,3 @@ public:
     void setNextToken(Token *newToken);
     Token* getNextToken();
 };
-
-class LineList{
-	int num;
-	LineList * next;
-}
