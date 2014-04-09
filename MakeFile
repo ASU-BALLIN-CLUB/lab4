@@ -1,12 +1,12 @@
-CrossReference: main.o scanner.o print.o
-	gcc -o CrossReference main.o Scanner.o Print.o Token.o
+CrossReference: main.o Scanner.o Print.o Token.o
+	g++  main.o Scanner.o Print.o Token.o -o CrossReference
 Token.o: Token.cpp Token.h
-	gcc -c Token.cpp
+	g++ -c Token.cpp
 Scanner.o: Scanner.cpp Scanner.h
-	gcc -c Scanner.cpp
+	g++ -c Scanner.cpp
 Print.o: Print.cpp Print.h
-	gcc -c Print.cpp
+	g++ -c Print.cpp
 main.o: main.cpp common.h
-	gcc -c main.cpp
+	g++ -c main.cpp
 clean:
-	rm CrossReference main.o scanner.o print.o
+	rm CrossReference Token.o Scanner.o Print.o main.o
