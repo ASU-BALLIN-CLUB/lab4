@@ -20,8 +20,8 @@ using namespace std;
  a literal value, and a token code.
  ***************/
 class LineList{
-        int num;
-        LineList * next;
+    int num;
+    LineList * next;
 };
 class Token
 {
@@ -38,9 +38,9 @@ private:
     string tokenString;
     //What variables and methods am I missing to implement a binary tree.
     LineList *head;
-        Token *left;
-        Token *right;
-
+    Token *left;
+    Token *right;
+    
 public:
     Token();
     ~Token();
