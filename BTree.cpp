@@ -7,66 +7,87 @@
 //
 
 #include "BTree.h"
+#include <stdio.h>
 
 BTree::BTree()
 {
     root = NULL;
     num = 1;
+    left = NULL;
+    right = NULL;
+    next = NULL;
 }
 BTree::~BTree()
 {
-    recursiveDeleteTree(root);
+    recuresiveDeleteTree(root);
 }
-void recursiveDeleteTree(Token *root)
+void recuresiveDeleteTree(BTree *r)
 {
-    if(node->left!= null)
+    BTree *temp = r;
+    if(temp->getLeft()!= NULL)
     {
-        recursiveDeleteTree(node->left);
+        recuresiveDeleteTree(temp->getLeft());
     }
-    if(node->right!= null)
+    if(temp->getRight()!= NULL)
     {
-        recursiveDeleteTree(node->right);
+        recuresiveDeleteTree(temp->getRight());
     }
-    delete;
+    delete temp;
 }
+
 void add_node(Token *new_token){
-    if(root==null)
-        root = next;
+    if(new_token == NULL)
+        new_token->getNextToken();
     else{
-        Token *temp = root;
-        while(temp != null)
+        Token *temp = new_token;
+        while(temp != NULL)
         {
-            if(temp.getString().compare(new_token->getString()) < 0)
+            if(temp->getTokenString().compare(new_token->getTokenString()) < 0)
             {
-                if(temp->getLeft() == null)
+                if(temp->getLeft() == NULL)
                 {
                     temp->setLeft(new_token);
-                    temp =null;
+                    temp =NULL;
                     new_token->add_line_num();
                 }else
                 {
                     temp =  temp->getLeft();
                 }
-            }else if(temp.getString().compare(new_token->getString()) > 0)
+            }else if(temp->getTokenString().compare(new_token->getTokenString()) > 0)
             {
-                if(temp->getRight() == null)
+                if(temp->getRight() == NULL)
                 {
                     temp->setRight(new_token);
-                    temp =null;
+                    temp =NULL;
                     new_token->add_line_num();
                 }else
                 {
-                    temp =  temp->getLeft();
+                    temp =  temp->getRight();
                 }
-            }else if(temp.getString().compare(new_token->getString()) == 0)
+            }else if(temp->getTokenString().compare(new_token->getTokenString()) == 0)
             {
                 delete new_token;
             }
         }
     }
 }
+void BTree::setLeft(BTree* node)
+{
+    node->left = node;
+}
+BTree* BTree::getLeft()
+{
+    return this->left;
+}
+void BTree::setRight(BTree* node)
+{
+    node->right = node;
+}
+BTree* BTree::getRight()
+{
+    return this->right;
+}
 void add_line_num(){
     LineList *linenum = new LineList();
-    linenum = &num;
     
 }
