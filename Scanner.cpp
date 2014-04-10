@@ -440,7 +440,7 @@ void Scanner::getSpecial(char *str, char *token_ptr, Token *tok)
     *token_ptr = '\0';
     tok->setTokenString(string(str));
 }
-void Scanner::downshiftWord(char word[])
+void Scanner::downShiftWord(char word[])
 {
     /*
      Make all of the characters in the incoming word lower case.
