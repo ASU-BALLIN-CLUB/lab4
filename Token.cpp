@@ -11,8 +11,6 @@ Token::Token()
 {
     //What code do I need here to initialize everything.
     head = NULL;
-    left = NULL;
-    right = NULL;
 }
 Token::~Token()
 {
@@ -80,5 +78,20 @@ void add_node(LineList *item){
         temp = temp->next;
     }
     temp->next = item;
-    
+}
+void Token::setLeft(Token* node)
+{
+    node->left = node;
+}
+Token* Token::getLeft()
+{
+    return this->left;
+}
+void Token::setRight(Token* node)
+{
+    node->right = node;
+}
+Token* Token::getRight()
+{
+    return this->right;
 }
