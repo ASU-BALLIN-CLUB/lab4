@@ -1,0 +1,175 @@
+Print.cpp :
+_______________________________________________________________
+
+Print::Print(char source_name[], char date[])
+{
+    sets source file name, date to the input
+    sets page number to 0.
+}
+
+Print::~Print()
+{
+    Print deconstructor;
+}
+
+void Print::printLine(char line[])
+{
+    set char save_ch = '\0';
+    set char *save_chp = NULL;
+    set static int line_count = MAX_LINES_PER_PAGE;
+    
+    if (++line_count > MAX_LINES_PER_PAGE)
+    {
+        printPageHeader();
+        line_count = 1;
+    }
+    if (strlen(line) > MAX_PRINT_LINE_LENGTH)
+    {
+        save_chp = &line[MAX_PRINT_LINE_LENGTH];
+    }
+    if (save_chp)
+    {
+        save_ch = *save_chp;
+        *save_chp = '\0';
+    }
+    printf("%s", line);
+    if (save_chp)
+    {
+        *save_chp = save_ch;
+    }
+}
+
+void Print::printPageHeader()
+{
+    Set char;
+    print out the page header in page, file name, date format.
+}
+
+void Print::printToken(Token *token)
+{
+    set line;
+    set symbol_String;
+    
+    switch (token->getCode())
+    {
+        if(token is a NUMBER):
+            if (token is INTEGER_LIT)
+            {
+                sprintf(line,with the token int_literal);
+            }
+            else
+            {
+                sprintf(line,token with real literal);
+            }
+            break;
+        if(token is a STRING):
+            sprintf(line,token with string));
+            break;
+        else(default):
+            sprintf(line,token with token string);
+            break;
+    }
+    printLine;
+}
+_______________________________________________________________
+
+BTree.cpp :
+_______________________________________________________________
+
+BTree::BTree()
+{
+    % BTree constructor
+    Set root to NULL;
+    Set num = 1;
+}
+
+BTree::~BTree()
+{
+    % Deconstructor
+    Delete the tree recursively; (Call recursiveDeleteTree)
+}
+
+void recursiveDeleteTree(Token *root)
+{
+    if(left node isn't null)
+    {
+        call recursiveDeleteTree again with (node->left);
+    }
+    if(right node isn't null)
+    {
+        call recursiveDeleteTree again with (node->right);
+    }
+    delete;
+}
+
+void add_node(Token *new_token)
+{
+    if(root is null)
+        root = next;
+    else
+    {
+        Add a temp token pointing to root
+        while(temp isn't null)
+        {
+            if(temp is alphabetically lesser than the node)
+            {
+                if(left node of temp is null)
+                {
+                    set new token to the left token of temp;
+                    set temp to null to break while loop;
+                    add line num to the new token;
+                }
+                else
+                {
+                    change temp to left of temp;
+                }
+            }
+            else if(temp is alphabetically lesser than the node)
+            {
+                if(right node of temp is null)
+                {
+                    set new token to the tight token of temp;
+                    set temp to null to break while loop;
+                    add line num to the new token;
+                }
+                else
+                {
+                    change temp to right of temp;
+                }
+            }
+            else if(the temp and new node are the same)
+            {
+                delete new_token;
+                set the line num to new token;
+            }
+        }
+    }
+}
+
+void add_line_num()
+{
+    Create linedlist
+    add line num = &num;
+    
+}
+
+_______________________________________________________________
+
+Scanner.cpp :
+_______________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
