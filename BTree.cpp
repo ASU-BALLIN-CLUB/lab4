@@ -15,17 +15,17 @@ BTree::BTree()
 }
 BTree::~BTree()
 {
-    recuresiveDeleteTree(root);
+    recursiveDeleteTree(root);
 }
-void recuresiveDeleteTree(Token *root)
+void recursiveDeleteTree(Token *root)
 {
     if(node->left!= null)
     {
-        recuresiveDeleteTree(node->left);
+        recursiveDeleteTree(node->left);
     }
     if(node->right!= null)
     {
-        recuresiveDeleteTree(node->right);
+        recursiveDeleteTree(node->right);
     }
     delete;
 }
